@@ -23,7 +23,6 @@ export default class EditModalBox extends React.Component {
         });
         this.refs.myModal.open();
     }
-
     closeForm = () => {
         this.refs.myModal.close();
     }

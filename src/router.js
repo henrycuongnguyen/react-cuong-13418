@@ -23,6 +23,7 @@ import MyWeb from './components/WebView';
 import FlatlistBasic from './components/FlatList';
 import Audio from './components/Audio';
 import LoginWordpress from './screens/LoginWordpress';
+import PushNotifications from './components/PushNotifications';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -93,6 +94,9 @@ export const SignedIn2 = TabNavigator(
 export const SignedIn = DrawerNavigator({
   Main: {
     screen: Maind
+  },
+  PushNotifications: {
+    screen: PushNotifications
   },
   Camera: {
     screen: Camera
