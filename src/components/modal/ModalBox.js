@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button,Alert, Image, StyleSheet, Dimensions, TextInput } from 'react-native';
+import { Text, View, Button,Alert, Image, StyleSheet, Dimensions, TextInput, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modalbox';
 import FlatlistData from './../data/FlatListData';
 

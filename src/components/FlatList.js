@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, Image, FlatList, StyleSheet, Platform, TouchableHighlight, Alert } from 'react-native';
+import { Text, View, Button, Image, FlatList, StyleSheet, Platform, TouchableHighlight, Alert, RefreshControl } from 'react-native';
 import FlatlistData from './data/FlatListData';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Swipeout from 'react-native-swipeout';
@@ -100,11 +100,22 @@ class FlatlistBasic extends React.Component {
     this.state = {
       dltRowKey: null,
       refreshEdit: 0,
+      refreshing: false,
     }
   }
 
   componentDidMount() {
+    this.setState({
+      refreshing: true
+    });
     this.props.onFectchFood();
+    this.setState({
+      refreshing: false
+    });
+  }
+
+  onRefresh = () => {
+     this.componentDidMount();
   }
 
   refresh = (activekey) => {
@@ -163,6 +174,18 @@ class FlatlistBasic extends React.Component {
           }
 
           renderSectionHeader={({ section, index }) => <FlastListItem>{section.key}</FlastListItem>}
+          refreshControl={
+            <RefreshControl 
+              tintColor={'#01A191'}
+              title={'Loading...'}
+              titleColor={'#01A191'}
+              colors={['#01A191', '#41CFBD']}
+              progressBackgroundColor={'#FFFFFF'}
+              refreshing = {this.state.refreshing}
+              onRefresh={this.onRefresh}
+
+            />
+          }
         >
         </FlatList>
         {/* this cua FlatlistBasic goi den cac ham */}

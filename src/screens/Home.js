@@ -1,30 +1,35 @@
 import React from "react";
-import { ScrollView, Text, Linking, View, TouchableOpacity, Image } from "react-native";
+import { ScrollView, Text, Linking, View, TouchableOpacity, Image,StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
 import images from './image';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {connect} from 'react-redux';
+import BtnMenu from './BtnMenu';
 
-class LogoTitle extends React.Component {
-  render() {
-    return (
-      <Image
-        source={require('./spiro.png')}
-        style={{ width: 30, height: 30 }}
-      />
-    );
-  }
-}
+const DrawerLabel = ({ label, icon }) => (
+  <View style={{
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 40,
+    paddingLeft: 10,
+    width: '100%'
+  }}>
+    <View style={{ alignItems: 'center', marginRight: 20, width: 40 }}>
+      <Image resizeMode="contain" source={icon} style={{ height: 40, width: 40 }} />
+    </View>
+    <View style={{ flex: 1 }}>
+      <Text>{label}</Text>
+    </View>
+  </View>
+);
 
 
-class Home extends React.Component { 
+class Home extends React.Component {
+  
   static navigationOptions = {
-    headerTitle: <LogoTitle />,
-    headerLeft: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Info"
-        color="#fff"
-      />
+    drawerLabel: 'Home',
+    drawerIcon: ({ tintColor }) => (
+      <Icon name="home" size={30} color="blue" />
     ),
   };
 
@@ -36,12 +41,9 @@ class Home extends React.Component {
   }
 
   render(){
-    // var propuse=this.props.use;
-    // if(propuse.length>0){
-              
-    // }
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1}}>
+        <BtnMenu {...this.props} />
         <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
           {
             this.props.use.map((use, index)=>(
@@ -76,3 +78,10 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   )(Home)
+
+  const styles = StyleSheet.create({
+    icon: {
+      width: 24,
+      height: 24,
+    },
+  });

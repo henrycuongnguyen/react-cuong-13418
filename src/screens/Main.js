@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, Button, BackHandler } from "react-native";
+import { Text, View, TouchableOpacity, Image, Button, BackHandler, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import MapView from './../components/MapView';
 import ImageSwipe from './../components/ImageSwipe';
@@ -41,29 +41,56 @@ export default class Main extends React.Component {
     }
   };
 
-  displayMap() {
-    return (
-      <MapView></MapView>
-    );
-  }
-
-
   render() {
+    // const resizeMode = 'center';
+    const text = 'I am some centered text';
 
     return (
-      <View style={{ flex: 1 }}>
-        <Image
-          style={{ flex: 5 / 1 }}
-          source={{ uri: 'https://boygeniusreport.files.wordpress.com/2017/11/iphone-x-photo.jpg?quality=98&strip=all&w=782' }}
-        />
-        <View style={{ flex: 1 / 1 }}>
-
-          <ImageSwipe />
-
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: '#eee',
+        }}
+      >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              // resizeMode,
+            }}
+            source={{ uri: 'https://boygeniusreport.files.wordpress.com/2017/11/iphone-x-photo.jpg?quality=98&strip=all&w=782' }}
+          />
         </View>
-
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: 'transparent',
+            justifyContent: 'center',
+          }}
+        >
+          <Text
+            style={{
+              flex: 40/1,
+              textAlign: 'center',
+              fontSize: 20,
+              color: "#0000ff"
+            }}
+          >
+            {text}
+          </Text>
+          <View style = {{height: 80,}}>
+            <ImageSwipe />
+          </View>
+        </View>
       </View>
-
-    )
+    );
   }
 };

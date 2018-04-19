@@ -35,9 +35,10 @@ export default class EditModalBox extends React.Component {
                 ref={'myModal'}
                 style={{
                     justifyContent: 'center',
-                    width: widthScreen - 80,
+                    width: widthScreen-80,
                     height: 280,
-                    shadowRadius: 10
+                    shadowRadius: 10,
+                    borderRadius: 5
                 }}
                 backdrop={true}
                 position='center'
@@ -54,6 +55,14 @@ export default class EditModalBox extends React.Component {
                             return { FoodName: text }
                         })
                     }}
+                    returnKeyType="next"
+                    autoFocus={false}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    onSubmitEditing={() => {
+                        this.passwordInput.focus();
+                    }}
+                    ref={ input => this.emailInput = input }
                 ></TextInput>
                 <TextInput
                     style={styles.textInput}
@@ -65,13 +74,15 @@ export default class EditModalBox extends React.Component {
                             return { Description: text }
                         })
                     }}
+                    returnKeyType="done"
+                    ref={ input => this.passwordInput = input }
                 ></TextInput>
                 <View style={{
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
                     <Button
-                        title="Save"
+                        title="Save product"
                         onPress={() => {
                             if (this.state.FoodName == '' || this.state.Description == '') {
                                 console.log('press key name and descriptioo');
