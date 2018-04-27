@@ -76,17 +76,20 @@ export default class Main extends React.Component {
             justifyContent: 'center',
           }}
         >
-          <Text
-            style={{
-              flex: 40/1,
-              textAlign: 'center',
-              fontSize: 20,
-              color: "#0000ff"
-            }}
-          >
-            {text}
-          </Text>
-          <View style = {{height: 80,}}>
+          <View
+              style={{
+                flex: 40 / 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Text style= {{color: 'red', fontSize: 20,}}>{text}</Text>
+              <TouchableOpacity  onPress = {()=>{this.props.navigation.navigate('Map')}}>
+                <Text style= {{color: 'blue',fontSize: 25,}}>To Map</Text>
+              </TouchableOpacity>
+          </View>
+         
+          <View style={{ height: 80, }}>
             <ImageSwipe />
           </View>
         </View>

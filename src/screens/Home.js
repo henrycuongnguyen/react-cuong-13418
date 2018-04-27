@@ -6,23 +6,22 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {connect} from 'react-redux';
 import BtnMenu from './BtnMenu';
 
-const DrawerLabel = ({ label, icon }) => (
-  <View style={{
-    alignItems: 'center',
-    flexDirection: 'row',
-    height: 40,
-    paddingLeft: 10,
-    width: '100%'
-  }}>
-    <View style={{ alignItems: 'center', marginRight: 20, width: 40 }}>
-      <Image resizeMode="contain" source={icon} style={{ height: 40, width: 40 }} />
-    </View>
-    <View style={{ flex: 1 }}>
-      <Text>{label}</Text>
-    </View>
-  </View>
-);
-
+// const DrawerLabel = ({ label, icon }) => (
+//   <View style={{
+//     alignItems: 'center',
+//     flexDirection: 'row',
+//     height: 40,
+//     paddingLeft: 10,
+//     width: '100%'
+//   }}>
+//     <View style={{ alignItems: 'center', marginRight: 20, width: 40 }}>
+//       <Image resizeMode="contain" source={icon} style={{ height: 40, width: 40 }} />
+//     </View>
+//     <View style={{ flex: 1 }}>
+//       <Text>{label}</Text>
+//     </View>
+//   </View>
+// );
 
 class Home extends React.Component {
   

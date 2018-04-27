@@ -23,10 +23,12 @@ import Upload from "./components/AppTest/AppImagePicker";
 import Camera from "./components/camera/AppCamera";
 import WebBrowser from "./components/WebBrowser";
 import MyWeb from './components/WebView';
+import MapView from './components/MapView';
 // import ImageSwipe from './components/ImageSwipe';
 import FlatlistBasic from './components/FlatList';
 import Audio from './components/Audio';
 import PushNotifications from './components/PushNotifications';
+import Map from './components/Map';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -68,12 +70,13 @@ export const FireBaseLg = StackNavigator({
   
 });
 
-
-
 export const Maind = StackNavigator({
   Main: {
     screen: Main,
-  }
+  },
+  Map: {
+    screen: Map
+  },
 });
 
 export const SignedIn2 = TabNavigator(
@@ -96,6 +99,9 @@ export const SignedIn2 = TabNavigator(
         )
       }
     },
+    MapView: {
+      screen: MapView
+    },
     Qrcode: {
       screen: Qrcode
     },
@@ -104,6 +110,7 @@ export const SignedIn2 = TabNavigator(
     }
 
   },
+  
 
   {
     tabBarPosition: 'bottom',
@@ -114,12 +121,12 @@ export const SignedIn2 = TabNavigator(
 const CustomDrawerContentComponent = (props) => (
   <ScrollView>
     <Image style={{
-                  flex: 1 , 
-                  position : 'absolute', 
+                  flex: 1 ,
+                  position : 'absolute',
                   top : 0,
                   left: 0,
-                  bottom: 0, 
-                  // height: Dimensions.get('window').height, 
+                  bottom: 0,
+                  // height: Dimensions.get('window').height,
                   width: Dimensions.get('window').width
                 }}
                   source={require('./screens/spiro.png')}
@@ -140,6 +147,7 @@ export const SignedIn = DrawerNavigator({
     screen: Maind,
     navigationOptions: {
       drawerLabel: "Main",
+      CustomDrawerContentComponent: '',
       drawerIcon: ({ tintColor }) => <Icon name="rocket" tintColor={'#01A191'} size={24}/>
     }
   },
