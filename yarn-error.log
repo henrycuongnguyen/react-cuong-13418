@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\HCTQ\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-map
+  C:\Program Files\nodejs\node.exe C:\Users\HCTQ\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-screen-brightness
 
 PATH: 
   C:\Program Files\Java\jdk1.8.0_102\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\MATLAB7\bin\win32;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;;C:\Program Files\Microsoft VS Code\bin;C:\Users\HCTQ\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'E:\LearnReactNative\upload\node_modules\babel-core\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'E:\LearnReactNative\upload\node_modules\babel-preset-es2015-node\node_modules\.bin'
 
 npm manifest: 
   {
@@ -29,6 +29,7 @@ npm manifest:
       "react": "^16.3.0-alpha.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
       "react-native-elements": "^0.19.0",
+      "react-native-map": "0.0.1",
       "react-native-modalbox": "^1.4.2",
       "react-native-qrcode": "^0.2.6",
       "react-native-swipeout": "^2.3.3",

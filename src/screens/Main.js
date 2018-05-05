@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, Button, BackHandler, StyleSheet } from "react-native";
+import { Text, View, TouchableOpacity, Image, Button, BackHandler, StyleSheet, Alert } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import MapView from './../components/MapView';
 import ImageSwipe from './../components/ImageSwipe';
@@ -40,6 +40,32 @@ export default class Main extends React.Component {
 
     }
   };
+
+  
+  handleBackButton = () => {
+   Alert.alert(
+       'Exit App',
+       'Exiting the application?', [{
+           text: 'Cancel',
+           onPress: () => console.log('Cancel Pressed'),
+           style: 'cancel'
+       }, {
+           text: 'OK',
+           onPress: () => BackHandler.exitApp()
+       }, ], {
+           cancelable: false
+       }
+    )
+    return true;
+  } 
+  
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+  
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
 
   render() {
     // const resizeMode = 'center';

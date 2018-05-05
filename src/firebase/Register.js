@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert , KeyboardAvoidingView, StyleSheet } from 'react-native';
 import firebaseApp from './firebaseApp';
 
 class Register extends Component {
@@ -44,30 +44,44 @@ class Register extends Component {
       
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'pink', justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Register</Text>
-                <TextInput
-                    style={{ height: 40, width: 250, borderColor: 'gray', borderWidth: 1 }}
-                    onChangeText={(email) => this.setState({ email: email })}
-                    value={this.state.email}
+            <KeyboardAvoidingView style={styles.container}  behavior="padding" enabled>
+                    <TextInput
+                        style={{ height: 40, width: 250, borderColor: 'gray', borderWidth: 1, marginBottom: 10, color: '#000', paddingLeft: 10 }}
+                        onChangeText={(email) => this.setState({ email: email })}
+                        value={this.state.email}
+                        placeholder="Email"
+                        underlineColorAndroid='transparent'
+                        
+                        />
+                    <TextInput
+                        style={{ height: 40, width: 250, borderColor: 'gray', borderWidth: 1, color: '#000',paddingLeft: 10 }}
+                        onChangeText={(password) => this.setState({ pass: password })}
+                        secureTextEntry={true}
+                        value={this.state.pass}
+                        placeholder="Pass"
+                        underlineColorAndroid='transparent'
+
                     />
-                <TextInput
-                    style={{ height: 40, width: 250, borderColor: 'gray', borderWidth: 1 }}
-                    onChangeText={(password) => this.setState({ pass: password })}
-                    secureTextEntry={true}
-                    value={this.state.pass}
-                />
-               
-                <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity 
-                        onPress = {() => this.onRegister()}
-                        style={{ backgroundColor: '#ff0000' }}>
-                        <Text style={{ padding: 5 }}>Register</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+                
+                    <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 15 }}>
+                        <TouchableOpacity 
+                            onPress = {() => this.onRegister()}
+                            style={{ backgroundColor: '#ff0000', borderRadius: 4 }}>
+                            <Text style={{ padding: 10, color: '#fff' }}>Register user</Text>
+                        </TouchableOpacity>
+                    </View>
+            </KeyboardAvoidingView>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#fff",
+      alignItems: "center",
+      justifyContent: "center"
+    },
+})
 
 export default Register;

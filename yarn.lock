@@ -3979,6 +3979,10 @@ react-native-keyboard-aware-scroll-view@0.5.0:
     prop-types "^15.6.0"
     react-native-iphone-x-helper "^1.0.1"
 
+react-native-map@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-map/-/react-native-map-0.0.1.tgz#1b64b2647c2a7f50d6cf458488a5dac8158f9951"
+
 "react-native-maps@https://github.com/expo/react-native-maps/archive/0.20.1-exp.0.tar.gz":
   version "0.20.1"
   resolved "https://github.com/expo/react-native-maps/archive/0.20.1-exp.0.tar.gz#81d607e2d77481c0441aecfdbc303389a34084c0"
@@ -4012,6 +4016,10 @@ react-native-safe-module@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-native-safe-module/-/react-native-safe-module-1.2.0.tgz#a23824ca24edc2901913694a76646475113d570d"
   dependencies:
     dedent "^0.6.0"
+
+react-native-screen-brightness@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-screen-brightness/-/react-native-screen-brightness-0.3.2.tgz#b5e393712985948caa8f37c3f0857c149ba73276"
 
 react-native-svg@6.2.2:
   version "6.2.2"

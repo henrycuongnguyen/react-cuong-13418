@@ -12,6 +12,8 @@ import { FontAwesome } from "react-native-vector-icons";
 import SignUp from "./screens/SignUp";
 import SignIn from "./screens/SignIn";
 import Login from "./firebase/Login";
+import ImagePicker from "./components/ImagePicker";
+import LoginFB from "./screens/TestFB";
 import Register from "./firebase/Register";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
@@ -154,6 +156,10 @@ export const SignedIn = DrawerNavigator({
   FireBaseLg: {
     screen: FireBaseLg
   },
+  ImagePicker: {
+    screen: ImagePicker
+  },
+ 
   PushNotifications: {
     screen: PushNotifications
   },
