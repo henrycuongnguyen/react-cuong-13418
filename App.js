@@ -12,7 +12,7 @@ const store = createStore(
 );
 
 export default App = () => (
-  <Provider store={store}>
+  <Provider store={store} >
     <AppIndex />
   </Provider>
 )

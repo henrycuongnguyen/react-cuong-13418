@@ -31,6 +31,7 @@ import FlatlistBasic from './components/FlatList';
 import Audio from './components/Audio';
 import PushNotifications from './components/PushNotifications';
 import Map from './components/Map';
+import RestApi from './restapiwp/RestApi';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -59,14 +60,12 @@ export const FireBaseLg = StackNavigator({
     screen: Login,
     navigationOptions: {
       title: "Login",
-      headerStyle
     }
   },
   Register: {
     screen: Register,
     navigationOptions: {
       title: "Register",
-      headerStyle
     }
   },
   
@@ -77,7 +76,10 @@ export const Maind = StackNavigator({
     screen: Main,
   },
   Map: {
-    screen: Map
+    screen: Map,
+    navigationOptions: {
+      title: "Map",
+    }
   },
 });
 
@@ -158,6 +160,9 @@ export const SignedIn = DrawerNavigator({
   },
   ImagePicker: {
     screen: ImagePicker
+  },
+  RestApi: {
+    screen: RestApi
   },
  
   PushNotifications: {

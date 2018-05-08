@@ -1,6 +1,8 @@
 import { ImagePicker } from 'expo'
 import React from 'react'
-import { Image, Button, StyleSheet, View } from 'react-native'
+import { Image,  StyleSheet, View } from 'react-native'
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class App extends React.Component {
 
@@ -15,8 +17,40 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.picture} source={{uri: this.state.uri}}/>
-        <Button title="Select Image" onPress={this._selectPicture}/>
-        <Button title="Take Picture" onPress={this._takePicture}/>
+        
+        <View style = {{marginBottom: 20}}>
+            <Button
+                titleStyle={{ fontWeight: "700" }}
+                buttonStyle={{
+                  backgroundColor: "rgba(92, 99,216, 1)",
+                  width: 300,
+                  height: 45,
+                  borderColor: "transparent",
+                  borderWidth: 0,
+                  borderRadius: 5
+                }}
+                containerStyle={{ marginTop: 20, marginBottom: 20 }}
+                title="Select Image"
+                onPress={this._selectPicture}
+            />
+          </View>
+          <View style = {{marginBottom: 20}}>
+            <Button 
+                  titleStyle={{ fontWeight: "700" }}
+                  buttonStyle={{
+                    backgroundColor: "rgba(92, 99,216, 1)",
+                    width: 300,
+                    height: 45,
+                    borderColor: "transparent",
+                    borderWidth: 0,
+                    borderRadius: 5
+                }}
+                containerStyle={{ marginTop: 20, marginBottom: 20 }}
+                title="Take Picture" 
+                onPress={this._takePicture}
+
+              />
+        </View>
       </View>
     )
   }
@@ -57,8 +91,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  btn: {
+    padding: 5,
+    marginBottom: 5,
+  },
   picture: {
-    ...StyleSheet.absoluteFillObject
+    // ...StyleSheet.absoluteFillObject
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
   }
 
 })
